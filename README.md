@@ -1,56 +1,58 @@
-# Welcome to your Lovable project
+# Hintro Task Board
 
-## Project info
+A functional Task Board application built as part of a frontend engineering evaluation.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This project focuses on clean frontend architecture, structured state management, usability, and reliable client-side persistence without any backend.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌐 Live Demo
 
-**Use Lovable**
+Deployed Application: **[Add your deployed URL here]**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Features
 
-**Use your preferred IDE**
+### 🔐 Authentication
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Static login credentials  
+  - Email: `intern@demo.com`  
+  - Password: `intern123`
+- Remember Me functionality using localStorage
+- Protected routes
+- Logout functionality
+- Proper validation and error handling
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+### 📋 Task Board
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Fixed columns: Todo, Doing, Done
+- Create, edit, and delete tasks
+- Drag & drop across columns
+- Search by title
+- Filter by priority
+- Sort by due date (empty values appear last)
+- Activity log tracking:
+  - Task created
+  - Task edited
+  - Task moved
+  - Task deleted
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 💾 Persistence & Reliability
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- Board state persists across refresh
+- Safe localStorage parsing with fallback handling
+- Reset Board option with confirmation dialog
+- Handles empty or missing storage safely
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗 Tech Stack
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
 
 This project is built with:
 
@@ -59,15 +61,53 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🧠 Architecture Overview
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### State Management
 
-## Can I connect a custom domain to my Lovable project?
+State is managed using the React Context API to centralize board logic and authentication state.  
+This approach avoids prop drilling and ensures consistent state updates across components.
 
-Yes, you can!
+### Persistence Strategy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+All board data is stored in localStorage.  
+Storage interactions are handled safely with proper parsing and fallback logic to prevent crashes due to corrupted or missing data.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Component Structure
+
+The UI is organized into reusable components:
+
+- BoardColumn  
+- TaskCard  
+- TaskModal  
+- Toolbar  
+- ActivityLog  
+
+This structure ensures separation of concerns and maintainability.
+
+---
+
+## 🧪 Tests
+
+Basic tests validate:
+
+- Login validation logic
+- Task creation behavior
+- Task movement updates state correctly
+
+---
+
+## ⚙️ Setup Instructions
+
+Clone the repository:
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd hintro-task-board
+```sh
+npm install
+Run development server
+
+npm run dev
