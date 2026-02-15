@@ -8,7 +8,8 @@ This project focuses on clean frontend architecture, structured state management
 
 ## 🌐 Live Demo
 
-Deployed Application: **[Add your deployed URL here]**
+Deployed Application: https://taskboardapplication.vercel.app
+
 
 ---
 
@@ -102,10 +103,6 @@ Basic tests validate:
 ## ⚙️ Setup Instructions
 
 Clone the repository:
-
-```bash
-git clone <YOUR_REPOSITORY_URL>
-cd hintro-task-board
 ```sh
 npm install
 Run development server
